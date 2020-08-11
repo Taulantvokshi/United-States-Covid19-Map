@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Ubuntu:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #e4e5e8;
+  position: relative;
+}
+
+path {
+  fill: #026596;
+  cursor: pointer;
+  /* stroke-width: none; */
+  /* stroke: #e4e3e3; */
+}
+
+.circles {
+  fill: rgba(207, 0, 15, 0.2);
+  stroke: red;
+  stroke-width: 1;
+}
+.states {
+  fill: #026596;
+  stroke: #d1d1d1;
+  stroke-width: 0.5;
+}
+
+.state-numbers {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  fill: #f5f5f5;
+
+  /* text-shadow: 0.2px 0.2px 0.2px black; */
+}
+
+.state-names {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  fill: #f5f5f5;
+  /* text-shadow: 0.2px 0.2px 0.2px black; */
+}
+.map-grid {
+  width: 100vw;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns:
+    [full-start] minmax(10px, 1fr) [center-start] repeat(
+      6,
+      [col-start] minmax(min-content, 140px) [col-end]
+    )
+    [center-end] minmax(10px, 1fr) [full-end];
+}
+.container {
+  height: 550px;
+  border-radius: 7px;
+  grid-column: 2 / 8;
+  /* background-color: sandybrown; */
+}
+
+@media only screen and (max-width: 688px) {
+  .container {
+    height: 300px;
+  }
+}
+
+.header {
+  text-align: center;
+}
+
+.title {
+  color: #181b1d;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-top: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 688px) {
+  .title {
+    margin-top: 1.5rem;
+  }
+}
+
+.slider {
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+}
+
+.slider-controles {
+  height: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 31rem;
+}
+
+@media only screen and (max-width: 898px) {
+  .slider {
+    flex-direction: column;
+    height: 10rem;
+  }
+}
+
+@media only screen and (max-width: 688px) {
+  .slider-controles {
+    width: 22rem;
+    height: 5rem;
+  }
+}
+
+.media-controls {
+  position: relative;
+  height: 30px;
+  width: 30px;
+}
+@media only screen and (max-width: 898px) {
+  .media-controls {
+    margin-right: 0.4rem;
+  }
+}
+
+.pauseButton {
+  display: none;
+}
+
+.repeatButton {
+  display: none;
+}
+
+.playButton,
+.pauseButton,
+.repeatButton {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.repeatButton > img {
+  width: 100%;
+  height: 100%;
+}
+.pauseButton > img {
+  width: 100%;
+  height: 100%;
+}
+.playButton > img {
+  width: 100%;
+  height: 100%;
+}
+.repeatButton:hover {
+  transform: scale(1.2);
+}
+.pauseButton:hover {
+  transform: scale(1.2);
+}
+.playButton:hover {
+  transform: scale(1.2);
+}
+
+.selector {
+  width: 28rem;
+  border-radius: 15px;
+  height: 2px;
+  outline: none;
+  background: red;
+}
+@media only screen and (max-width: 688px) {
+  .selector {
+    width: 22rem;
+  }
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 2px; /* pick your own value */
+  padding: 0;
+  /* your slider styles */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  box-sizing: content-box;
+  background: #b81620;
+
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  box-sizing: content-box;
+  background: #283148;
+  border: 2px solid #b81620;
+  height: 25px;
+  width: 25px;
+  border-radius: 100%;
+}
+
+input[type="range"]::-ms-thumb {
+  -webkit-appearance: none;
+  box-sizing: content-box;
+  background: #283148;
+  border: 2px solid #b81620;
+  height: 25px;
+  width: 25px;
+  border-radius: 100%;
+}
+
+input[type="range"]::-ms-track {
+  border-color: transparent;
+  color: transparent;
+}
+.date {
+  margin-left: 1rem;
+  padding: 0.3rem;
+  width: 8rem;
+  text-align: center;
+}
+.current-date {
+  font-family: "Ubuntu", sans-serif;
+  color: #181b1d;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.infoTab {
+  position: absolute;
+  width: 120px;
+  height: 90px;
+  box-shadow: 0px 0px 54px -21px rgba(0, 0, 0, 0.75);
+  background-color: #e4e5e8;
+  z-index: 100;
+  display: none;
+  line-height: 0.3;
+  text-align: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+.infoTab p,
+h5 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 12px;
+}
+
+/* //MapSelection */
+
+.map-selection {
+  height: 3rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-container {
+  width: 18rem;
+  height: 100%;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.selectBy {
+  position: absolute;
+  left: 1rem;
+  top: -2px;
+}
+
+.btn-container > .btn {
+  width: 7rem;
+  height: 2.5rem;
+  background-color: #dadada;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: #026596;
+}
+
+.btn > h3 {
+  font-family: "Ubuntu", sans-serif;
+  color: #a0a2af;
+  font-weight: 500;
+  font-size: 1.4rem;
+}

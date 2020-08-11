@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Covid-19</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="dist/bundle.js" async defer></script>
+  </head>
+  <body>
+    <section class="header">
+      <div class="title">
+        <h1>Covid-19 Cases in the U.S</h1>
+      </div>
+    </section>
+    <section class="map-grid">
+      <div class="container"></div>
+    </section>
+
+    <section class="slider">
+      <div class="btn-container">
+        <div class="selectBy">
+          <h4>Select By:</h4>
+        </div>
+        <div class="btn general-btn"><h3>States</h3></div>
+        <div class="btn county-btn"><h3>County</h3></div>
+      </div>
+      <div class="slider-controles">
+        <div class="media-controls">
+          <div class="playButton">
+            <img src="./images/video-play.png" />
+          </div>
+          <div class="pauseButton">
+            <img src="./images/video-pause.png" />
+          </div>
+        </div>
+        <input
+          id="state"
+          class="selector"
+          type="range"
+          name="state"
+          min="0"
+          max="185"
+          step="1"
+          value="0"
+        />
+      </div>
+      <div class="date"><h5 class="current-date">2020/01/23</h5></div>
+    </section>
+  </body>
+</html>
