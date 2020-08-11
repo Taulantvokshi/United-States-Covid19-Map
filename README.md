@@ -9,3 +9,5 @@ the county data file contains more than 400k data points that have to be updated
 
 Coloring scales for hot zones were also a challenge, but I came up with a very interesting solution, for details on the implementation checkout the prject files.
 Each map has zooming capabilities, so I added an info tab that when hover in any of the counties displays the exact information.
+
+Website:  http://covid-tracker.taulantvokshi.com
